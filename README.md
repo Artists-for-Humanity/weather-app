@@ -15,7 +15,7 @@ This project consists of both frontend and backend work. For the frontend you wi
 
 ## URLs
 
-- API URL: `http://api.weatherapi.com/v1/current.json?key=5863755acb594078956213139202910&q=42.3601,-71.0589`
+- API URL: `http://api.weatherapi.com/v1/forecast.json?key=5863755acb594078956213139202910&q=42.3601,-71.0589&days=1`
 - Raleway Stylesheet: `<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">`
 - Raleway Style: `font-family: 'Raleway', sans-serif;`
 
