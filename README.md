@@ -21,15 +21,26 @@ This project consists of both frontend and backend work. For the frontend you wi
 
 ## Design
 
-Dimensions: 375px width by 667px height
+Dimensions: `375px` width by `667px` height
+
 Font: [Raleway](https://fonts.google.com/specimen/Raleway)
-City Font Size: 36px
-City Font Weight: 300
-Day and Time Font Size: 14px
-Day and Time Font Weight: 400
-Condition Font Size: 48px
-Condition Font Weight: 300
-Tempurature Font Size: 144px
-Tempurature Font Weight: 200
-Low/High Temp Font Size: 30px
-Low/High Temp Font Weight: 300
+
+City Font Size: `36px`
+
+City Font Weight: `300`
+
+Day and Time Font Size: `14px`
+
+Day and Time Font Weight: `400`
+
+Condition Font Size: `48px`
+
+Condition Font Weight: `300`
+
+Tempurature Font Size: `144px`
+
+Tempurature Font Weight: `200`
+
+Low/High Temp Font Size: `30px`
+
+Low/High Temp Font Weight: `300`
