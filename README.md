@@ -10,6 +10,10 @@ This project consists of both frontend and backend work. For the frontend you wi
 
 You can see the design file [here in Figma App](https://www.figma.com/file/8J0CQDU5CbzQjJSTtN3PGe/Design?node-id=0%3A1).
 
+## Tasks
+
+- Backend starts at [10:17](https://youtu.be/wPElVpR1rwA?t=617) in the video
+
 ## Notes
 
 - Instead of the Darksky API you will use weatherapi.com. You can use the API URL listed below to get weather data.
