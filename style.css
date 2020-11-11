@@ -1,0 +1,75 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background: linear-gradient(#62C6FF, #A3DDFE);
+}
+
+.wrapper {
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+/* Mobile */
+@media only screen and (max-width: 375px) {
+  body {
+    width: 375px;
+    height: 667px;
+  }
+
+  /* Mobile-body ONTOP */
+  .top-row {
+    text-align: center;
+  }
+
+  .row-2 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .row-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Rows ONTOP */
+  .boston {
+    font-size: 36px;
+    font-weight: 300;
+  }
+
+  .date-time {
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 50px;
+  }
+
+  .weather {
+    font-size: 48px;
+    font-weight: 300;
+    padding-bottom: 10px;
+  }
+
+  .temperature {
+    font-size: 144px;
+    font-weight: 200;
+  }
+
+  .low-high {
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  /* Designs-Edits ONTOP */
+}
