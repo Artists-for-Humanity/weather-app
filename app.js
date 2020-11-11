@@ -1,3 +1,4 @@
+
 window.addEventListener('load', () => {
   let long;
   let lat;
@@ -6,6 +7,12 @@ window.addEventListener('load', () => {
   let maxtemp = document.querySelector(".maxtemp");
   let mintemp = document.querySelector(".mintemp");
   let iconImage = document.querySelector(".images img");
+  let tempformat = "C";
+  function settemp(temp, max, min) {
+      temperatureDegree.textContent = temp + "°" + tempformat;
+      maxtemp.textContent = max + "°" + tempformat;
+      mintemp.textContent = min + "°" + tempformat;
+  }
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition
     (position=>{
@@ -20,17 +27,37 @@ window.addEventListener('load', () => {
            })
            .then(data =>{
              console.log(data)
-             const {temp_f, feelslike_f, humidity, vis_miles, wind_mph}= data.current;
+             const {temp_f, feelslike_f, humidity, vis_miles, wind_mph, temp_c}= data.current;
              const {name,} = data.location
              const {text, icon} = data.current.condition
-             const {maxtemp_f, mintemp_f} = data.forecast.forecastday[0].day
+             const {maxtemp_f, mintemp_f, maxtemp_c, mintemp_c} = data.forecast.forecastday[0].day
              //Set DOM Elements from the API
-             temperatureDegree.textContent = temp_f + "°F";
+
              temperatureDescription.textContent = text;
-             maxtemp.textContent = maxtemp_f + "°F";
-             mintemp.textContent = mintemp_f + "°F";
              iconImage.src = icon;
 
+             settemp(temp_f, maxtemp_f, mintemp_f);
+             document.addEventListener("click", () => {
+               if(tempformat === "F") {
+                 tempformat = "C"
+                 settemp(temp_c, maxtemp_c, mintemp_c);
+               } else {
+                 tempformat = "F"
+                 settemp(temp_f, maxtemp_f, mintemp_f);
+               }
+             })
+             //FORMULA FOR CELSIUS//
+             //let celsius = (temperature - 32) * (5/9);
+             //Change F --> C//
+            // temperatureSection.addEventListener("click", () =>{
+            // if //(temperatureSpan.textContent === "°F") {
+               //temperatureSpan.textContent = "°C"
+               //temperatureDegree.textContent = Math.floor();
+               //temperatureDegree.textContent = celsius;
+             //} else {
+               //temperatureSpan.textContent = "°F";
+             //}
+           //}
              console.log("City", name);
              console.log("Day", "Mon");
              console.log("Time", "3:00 pm");
