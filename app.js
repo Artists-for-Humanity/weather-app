@@ -1,8 +1,8 @@
 window.addEventListener("load", () => {
   let long;
   let lat;
-  let temperatureDescription = document.querySelector(".weather h3");
-  let temperatureDegree = document.querySelector(".temperature h4");
+  let temperatureDescription = document.querySelector(".weather");
+  let temperatureDegree = document.querySelector(".temperature");
   let maxtemp = document.querySelector(".max");
   let mintemp = document.querySelector(".min");
   let iconImage = document.querySelector(".images img");
