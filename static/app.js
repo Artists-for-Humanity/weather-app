@@ -6,11 +6,11 @@ window.addEventListener("load", () => {
   let maxtemp = document.querySelector(".max");
   let mintemp = document.querySelector(".min");
   let iconImage = document.querySelector(".images img");
-  let tempformat = "C";
+  let tempformat = "F";
   function settemp(temp, max, min) {
-    temperatureDegree.textContent = temp + "°" + tempformat;
-    maxtemp.textContent = max + "°" + tempformat;
-    mintemp.textContent = min + "°" + tempformat;
+    temperatureDegree.textContent = Math.round(temp) + "°";
+    maxtemp.textContent = Math.round(max) + "°" + tempformat;
+    mintemp.textContent = Math.round(min) + "°" + tempformat;
   }
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
