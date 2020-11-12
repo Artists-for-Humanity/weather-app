@@ -46,18 +46,7 @@ window.addEventListener('load', () => {
                  settemp(temp_f, maxtemp_f, mintemp_f);
                }
              })
-             //FORMULA FOR CELSIUS//
-             //let celsius = (temperature - 32) * (5/9);
-             //Change F --> C//
-            // temperatureSection.addEventListener("click", () =>{
-            // if //(temperatureSpan.textContent === "°F") {
-               //temperatureSpan.textContent = "°C"
-               //temperatureDegree.textContent = Math.floor();
-               //temperatureDegree.textContent = celsius;
-             //} else {
-               //temperatureSpan.textContent = "°F";
-             //}
-           //}
+
              console.log("City", name);
              console.log("Day", "Mon");
              console.log("Time", "3:00 pm");
