@@ -1,0 +1,23 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "In this project you will be building a functional weather app. You will use an API to get real weather data to display.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Artists-for-Humanity/weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Artists-for-Humanity/weather-app/issues"
+  },
+  "homepage": "https://github.com/Artists-for-Humanity/weather-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
