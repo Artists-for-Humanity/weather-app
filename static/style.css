@@ -4,7 +4,7 @@
 }
 
 body {
-  background: linear-gradient(#62C6FF, #A3DDFE);
+  background: linear-gradient(#62c6ff, #a3ddfe);
   font-variant-numeric: lining-nums;
 }
 
@@ -12,7 +12,7 @@ body {
   padding-top: 20px;
   padding-right: 30px;
   padding-left: 30px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   color: white;
 }
 
