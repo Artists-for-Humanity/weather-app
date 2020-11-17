@@ -6,14 +6,14 @@
 body {
   background: linear-gradient(#62c6ff, #a3ddfe);
   font-variant-numeric: lining-nums;
+  font-family: "Raleway", sans-serif;
+  color: white;
 }
 
 .wrapper {
   padding-top: 20px;
   padding-right: 30px;
   padding-left: 30px;
-  font-family: "Raleway", sans-serif;
-  color: white;
 }
 
 /* Mobile */
@@ -43,6 +43,41 @@ body {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+  }
+
+  .bottom-row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 180px;
+  }
+
+  .bottom-row-2 {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .text-box-1 {
+    display: flex;
+    flex-direction: column;
+    padding-right: 123px;
+  }
+
+  .text-box-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-box-3 {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+  }
+
+  .text-box-4 {
+    display: flex;
+    flex-direction: column;
   }
 
   /* Rows ONTOP */
@@ -82,6 +117,16 @@ body {
 
   .min {
     padding-top: 5px;
+  }
+
+  .bottom-text {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  .numbers {
+    font-size: 36px;
+    font-weight: 400;
   }
 
   /* Designs-Edits ONTOP */
