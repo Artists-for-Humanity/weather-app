@@ -31,6 +31,12 @@ This project consists of both frontend and backend work. For the frontend you wi
 
 "Linting" is a process that we can run on our code that formats it in a consistent manner. Formatting our code (indenting, adding semi-colons, etc) can be very tedious. To save us time and effort we can use tools to do this formatting for us.
 
+## Running
+
+1. Navigate to the folder of the project in Command Prompt (on Windows) or Terminal (on Mac).
+1. Run `npm run start` to start the server.
+1. Navigate to http://localhost:3030 in your web browser to see the site.
+
 ### Automatic Linting
 
 We can install an extension in our text editor in order to do linting for us.
