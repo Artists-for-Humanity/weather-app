@@ -7,6 +7,10 @@ window.addEventListener("load", () => {
   let mintemp = document.querySelector(".min");
   let iconImage = document.querySelector(".images img");
   let tempformat = "F";
+  /*
+    FEEDBACK:
+    Try just taking in 1 variable called data instead of three. Then get the variables we need outside of data.
+  */
   function settemp(temp, max, min) {
     temperatureDegree.textContent = Math.round(temp) + "°";
     maxtemp.textContent = Math.round(max) + "°" + tempformat;
@@ -46,6 +50,11 @@ window.addEventListener("load", () => {
           temperatureDescription.textContent = text;
           iconImage.src = icon;
 
+          /*
+            FEEDBACK:
+            Let's try passing the variable data here.
+            Then inside the settemp above we can pull out each of the variables we need from data.
+          */
           settemp(temp_f, maxtemp_f, mintemp_f);
           document.addEventListener("click", () => {
             if (tempformat === "F") {

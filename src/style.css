@@ -16,6 +16,10 @@ body {
   padding-left: 30px;
 }
 
+/*
+  FEEDBACK:
+  Typically we want to do "mobile first". What this means is our mobile CSS is not in a media query, so remove the media query here, and then when we get to desktop we will add a media query.
+*/
 /* Mobile */
 @media only screen and (max-width: 375px) {
   body {
@@ -24,6 +28,11 @@ body {
   }
 
   /* Mobile-body ONTOP */
+  /*
+    FEEDBACK:
+    Try giving these more descriptive class names. Instead of .row maybe call this .city-and-time
+    Try this for other rows as well.
+  */
   .top-row {
     text-align: center;
   }
@@ -45,6 +54,10 @@ body {
     align-items: flex-end;
   }
 
+  /*
+    FEEDBACK:
+    Try removing the padding-top here and instead use margin-top on .bottom-box
+  */
   .bottom-row {
     display: flex;
     flex-direction: row;
@@ -58,6 +71,15 @@ body {
     padding-bottom: 30px;
   }
 
+  /*
+    FEEDBACK:
+    Don't use padding here. Think about what would happen if the amount of text inside this box changed from 2 characters to 3.
+    With padding the width of the whole box would change if the length of text changed.
+    Instead, try to set the width of .text-box
+
+    Also, instead of text-box-1, text-box-2, etc. I think you could just make 1 .text-box class and use it on all 4.
+    Each one of them could have margin-bottom to achieve vertical space between the boxes.
+  */
   .text-box-1 {
     display: flex;
     flex-direction: column;
@@ -95,6 +117,10 @@ body {
     padding: 10px;
   }
   /* Rows ONTOP */
+  /*
+    FEEDBACK:
+    This isn't a great class name. For us the city is Boston, but if someone from another city uses it, it will be there city. Try a class names that describes all use cases.
+  */
   .boston {
     font-size: 36px;
     font-weight: 300;
