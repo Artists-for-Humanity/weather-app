@@ -158,5 +158,8 @@ body {
 .mid-time {
   font-size: 12px;
 }
-
+.mid-image img {
+  width: 40px;
+  padding: 5px;
+}
 /* Designs-Edits ONTOP */
