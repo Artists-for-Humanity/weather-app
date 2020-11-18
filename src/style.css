@@ -16,6 +16,10 @@ body {
   padding-left: 30px;
 }
 
+/*
+  FEEDBACK:
+  Typically we want to do "mobile first". What this means is our mobile CSS is not in a media query, so remove the media query here, and then when we get to desktop we will add a media query.
+*/
 /* Mobile */
 @media only screen and (max-width: 375px) {
   body {
