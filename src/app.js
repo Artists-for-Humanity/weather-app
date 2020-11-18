@@ -7,11 +7,32 @@ window.addEventListener("load", () => {
   let mintemp = document.querySelector(".min");
   let iconImage = document.querySelector(".images img");
   let tempformat = "F";
-  /*
-    FEEDBACK:
-    Try just taking in 1 variable called data instead of three. Then get the variables we need outside of data.
-  */
-  function settemp(temp, max, min) {
+  function settemp(data) {
+    let temp, max, min, hours;
+    console.log(hours);
+    if (tempformat == "C") {
+      hours = data.forecast.forecastday[0].hour.map((hour) => {
+        return hour.temp_c;
+      });
+      temp = data.current.temp_c;
+      min = data.forecast.forecastday[0].day.mintemp_c;
+      max = data.forecast.forecastday[0].day.maxtemp_c;
+    } else if (tempformat == "F") {
+      hours = data.forecast.forecastday[0].hour.map((hour) => {
+        return hour.temp_f;
+      });
+      temp = data.current.temp_f;
+      min = data.forecast.forecastday[0].day.mintemp_f;
+      max = data.forecast.forecastday[0].day.maxtemp_f;
+    }
+    let clone;
+    hours.forEach((temp) => {
+      console.log(temp);
+      clone = document.querySelector(".mid-column").cloneNode(true);
+      clone.querySelector(".degree-text h2").textContent =
+        Math.round(temp) + "°";
+      document.querySelector(".mid-row").appendChild(clone);
+    });
     temperatureDegree.textContent = Math.round(temp) + "°";
     maxtemp.textContent = Math.round(max) + "°" + tempformat;
     mintemp.textContent = Math.round(min) + "°" + tempformat;
@@ -45,24 +66,22 @@ window.addEventListener("load", () => {
             maxtemp_c,
             mintemp_c,
           } = data.forecast.forecastday[0].day;
+          const hour_0_temp_f = data.forecast.forecastday[0].hour[0].temp_f;
+          const hour_1_temp_f = data.forecast.forecastday[0].hour[1].temp_f;
+          console.log(hour_0_temp_f, hour_1_temp_f);
           //Set DOM Elements from the API
 
           temperatureDescription.textContent = text;
           iconImage.src = icon;
 
-          /*
-            FEEDBACK:
-            Let's try passing the variable data here.
-            Then inside the settemp above we can pull out each of the variables we need from data.
-          */
-          settemp(temp_f, maxtemp_f, mintemp_f);
+          settemp(data);
           document.addEventListener("click", () => {
             if (tempformat === "F") {
               tempformat = "C";
-              settemp(temp_c, maxtemp_c, mintemp_c);
+              settemp(data);
             } else {
               tempformat = "F";
-              settemp(temp_f, maxtemp_f, mintemp_f);
+              settemp(data);
             }
           });
 
@@ -77,6 +96,7 @@ window.addEventListener("load", () => {
           console.log("Wind", wind_mph + " mph");
           console.log("Min_Temp", mintemp_f + "°F");
           console.log("Max_Temp", maxtemp_f + "°F");
+          //console.log(temp_f);
         });
     });
   }
