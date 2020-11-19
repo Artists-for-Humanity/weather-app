@@ -26,12 +26,15 @@ window.addEventListener("load", () => {
       max = data.forecast.forecastday[0].day.maxtemp_f;
     }
     let clone;
+    let midRow = document.querySelector(".mid-row");
+    let masterClone = document.querySelector(".mid-column").cloneNode(true);
+    midRow.innerHTML = "";
     hoursAndImages.forEach(({ temp, image }) => {
-      clone = document.querySelector(".mid-column").cloneNode(true);
+      clone = masterClone.cloneNode(true);
       clone.querySelector(".degree-text h2").textContent =
         Math.round(temp) + "°";
       clone.querySelector(".mid-image img").src = image;
-      document.querySelector(".mid-row").appendChild(clone);
+      midRow.appendChild(clone);
     });
     temperatureDegree.textContent = Math.round(temp) + "°";
     maxtemp.textContent = Math.round(max) + "°" + tempformat;
