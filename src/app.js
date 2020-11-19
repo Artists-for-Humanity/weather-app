@@ -6,31 +6,31 @@ window.addEventListener("load", () => {
   let maxtemp = document.querySelector(".max");
   let mintemp = document.querySelector(".min");
   let iconImage = document.querySelector(".images img");
+  let midrowImg = document.querySelector("mid-row img");
   let tempformat = "F";
   function settemp(data) {
-    let temp, max, min, hours;
-    console.log(hours);
+    let temp, max, min, hoursAndImages;
     if (tempformat == "C") {
-      hours = data.forecast.forecastday[0].hour.map((hour) => {
-        return hour.temp_c;
+      hoursAndImages = data.forecast.forecastday[0].hour.map((hourData) => {
+        return { temp: hourData.temp_c, image: hourData.condition.icon };
       });
       temp = data.current.temp_c;
       min = data.forecast.forecastday[0].day.mintemp_c;
       max = data.forecast.forecastday[0].day.maxtemp_c;
     } else if (tempformat == "F") {
-      hours = data.forecast.forecastday[0].hour.map((hour) => {
-        return hour.temp_f;
+      hoursAndImages = data.forecast.forecastday[0].hour.map((hourData) => {
+        return { temp: hourData.temp_f, image: hourData.condition.icon };
       });
       temp = data.current.temp_f;
       min = data.forecast.forecastday[0].day.mintemp_f;
       max = data.forecast.forecastday[0].day.maxtemp_f;
     }
     let clone;
-    hours.forEach((temp) => {
-      console.log(temp);
+    hoursAndImages.forEach(({ temp, image }) => {
       clone = document.querySelector(".mid-column").cloneNode(true);
       clone.querySelector(".degree-text h2").textContent =
         Math.round(temp) + "°";
+      clone.querySelector(".mid-image img").src = image;
       document.querySelector(".mid-row").appendChild(clone);
     });
     temperatureDegree.textContent = Math.round(temp) + "°";
@@ -68,12 +68,11 @@ window.addEventListener("load", () => {
           } = data.forecast.forecastday[0].day;
           const hour_0_temp_f = data.forecast.forecastday[0].hour[0].temp_f;
           const hour_1_temp_f = data.forecast.forecastday[0].hour[1].temp_f;
-          console.log(hour_0_temp_f, hour_1_temp_f);
+
           //Set DOM Elements from the API
 
           temperatureDescription.textContent = text;
           iconImage.src = icon;
-
           settemp(data);
           document.addEventListener("click", () => {
             if (tempformat === "F") {
@@ -96,7 +95,6 @@ window.addEventListener("load", () => {
           console.log("Wind", wind_mph + " mph");
           console.log("Min_Temp", mintemp_f + "°F");
           console.log("Max_Temp", maxtemp_f + "°F");
-          //console.log(temp_f);
         });
     });
   }
